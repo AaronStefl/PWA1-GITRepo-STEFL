@@ -156,7 +156,7 @@ console.log('------Recap Functions ----------');
 console.log('------ MORE Strings ----------');
 
 
-/*------------------------------------------------------------ EDIT STRINGS-------------------------------------------------------------*/
+/*------------------------------------------------------------ EDIT STRINGS---------------------------------------*/
 
 var str1 = 'I love JavaScript! ';
 var str2 = 'JavaScript loves me!';
@@ -211,7 +211,7 @@ var abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	MORE:  Numbers
 	-----------------------------------------------
 */
-/*---------------------------------------------------------------------- EDIT NUMBERS ---------------------------------------------*/
+/*------------------------------------------------------------ EDIT NUMBERS ---------------------------------------------*/
 
 
 console.log('------ MORE Numbers ----------');
@@ -269,37 +269,47 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
 // indexOf()
 //Returns the first (least) index of an element within the array equal
 //to the specified value, or -1 if none is found.
-
+	console.log(arr2.indexOf('c'));
 
 // join()
 // Joins all elements of an array into a string.
-
+	console.log(arr2.join(','));
 
 // pop()
 // Removes the last element from an array and returns that element
 // shift() removes the first element from an array.
-
+	var element = arr1.pop();
+	console.log(element);
+	console.log(arr1);
 
 // push()
 // Adds one or more elements to the end of an array and returns the new
 //   length of the array
 // unshift() - Adds one or more elements to the front of an array.
-
+	arr2.push('f');
+	console.log(arr2);
 
 // reverse()
 // Reverses the order of the elements of an array
-
+	console.log(arr1.reverse());
 
 // splice()
 // Adds and/or removes elements from an array.
-
+	console.log(arr1);
+	console.log(arr1.splice(4,2));
+	console.log(arr1);
 
 // forEach()
 // Calls a function for each element in the array.
+	console.log(arr1);
+	arr1.forEach(function(element,index,array) {
+	console.log('element',element);
+	console.log('index',index);
+	console.log('array',array);
+})
 
 
-
-
+console.log("--------------Activity 5-------------------");
 /*******************************************
  STUDENT ACTIVITY 5:
 
@@ -315,12 +325,26 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
  7.  use array "secondHalfYr", and reduce the array to "Sept" & "Oct"
         and console.log the results
  ********************************************/
-
+console.log("---concat arrays Activity 5 ----");
     var firstQtr = ["Jan", "Feb", "Mar"];
     var secondQtr = ["Apr", "May", "Jun"];
     var secondHalfYr = ["Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
     var combined;
 
+	var combined = firstQtr.concat(secondQtr);
+	console.log("Concat 2 arrays:",combined);
+	
+	var combined = firstQtr.concat(secondQtr, secondHalfYr);
+	console.log("Concat 3 arrays:",combined);
+	
+	console.log("joined arrays:", combined.join());
+	
+	console.log("Took out-",combined.pop());
+	console.log("Show Array:",combined);
+	
+	var results = secondHalfYr.slice(2, 4);
+	console.log("slice:", results);
+	
 
 /*
 	===============================================
@@ -333,7 +357,7 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
 console.log('------ MORE Operators - typeof() ----------');
 
 
-/*-------------------------------------------------------- EDIT TYPE OF OPERATORS ---------------------------------------------------------*/
+/*----------------------------------------- EDIT TYPE OF OPERATORS -----------------------------------------------*/
 	console.log(typeof 5);
 	console.log(typeof "Hi");
 	
@@ -379,7 +403,7 @@ console.log('------ MORE Operators - typeof() ----------');
 
 */
 
-//-------------------------------------------------------------------------------------- EDIT SWITCH CONDITIONALS---------------------- */
+//----------------------------------------------------------- EDIT SWITCH CONDITIONALS---------------------- */
 
 	console.log("Switch Conditionals");
 	
@@ -444,7 +468,7 @@ console.log('------ MORE Conditionals - Switch ----------');
 
 */
 
-/*---------------------------------------------------------------------------- EDIT MORE FUNCTIONS ---------------------------------*/
+/*---------------------------------------------------------------- EDIT MORE FUNCTIONS ---------------------------------*/
 console.log('------ MORE Functions ----------');
 
 	var bondsCars = function(){
@@ -511,8 +535,13 @@ console.log('------ MORE Functions ----------');
 				//code goes here
 			}			
 */
-console.log('------ While / Loop ----------');
-
+//------------------------------------------------------------- EDIT LOOPS ---------------------------------
+console.log('--------------------------- While / Loop ----------');
+/* 	var numOfBeers = 10;
+	while (numOfBeers > 0) {
+		console.log(numOfBeers +'kegs on the wall.');
+		numOfBeers--;
+	} */
 	
 /*
 	===============================================
@@ -536,7 +565,12 @@ console.log('------ While / Loop ----------');
 			};
 */
 
-console.log('------For Loop ----------');
+console.log('-------------------------------For Loop ----------');
+
+/* 	for (var beers = 10; beers > 0; beers--) {
+		console.log(beers + 'bottles of beer on the wall.');
+	} */
+
 
 
 	/* 
@@ -550,7 +584,9 @@ console.log('------For Loop ----------');
 		- in the example below, the last index of the array would be 4 
 			- the  .length property returns the count, which would be 5	
 	*/	
-
+console.log("----------------------------------------Array loops -------------");
+	var myNums = [1,2,3,4,5]
+	console.log ("length:",myNums.length);
 
 	/* 
 		using the for() loop with .length
@@ -570,8 +606,11 @@ console.log('------For Loop ----------');
 		- depending on the size of an array, it can be more efficient to 
 			save the array length in a variable, inside the first statement
 	*/
-
-
+/* console.log("---For loop array---");
+	for (var i=0,j=myNums.length; i<j; i++) {
+	console.log(myNums[i]);
+} */
+	
 	/*
 		BREAK...
 
@@ -580,8 +619,15 @@ console.log('------For Loop ----------');
 			break point, and perform no more iterations
 	*/
 
-
-
+	/* console.log("------Break Loop -----");
+	for (var i=0, j=myNums.length; i<j; i++) {
+		if(i === 3) {
+			console.log("testing out the break and it broke");
+			break;
+		}
+		console.log("length in for loop:",myNums[i]);
+	}
+ */
 	/*
 		CONTINUE...
 
@@ -590,7 +636,16 @@ console.log('------For Loop ----------');
 			on to the next iteration
 	*/
 
-
+	console.log('---- Continue Loop ---');
+/* 	for (var i=0, j=myNums.length; i<j; i++) {
+		if(i === 3) {
+			console.log("testing out the break and it broke");
+			continue;
+		}
+		console.log("length in for loop:",myNums[i]);
+	} */
+	
+	
 /*******************************************
  STUDENT ACTIVITY 7:
 
@@ -603,6 +658,26 @@ console.log('------For Loop ----------');
 			- in the loop just console.log the values
 ********************************************/
 
+	/*-------FREEZING PAGE -------*/
+		/*-------FREEZING PAGE -------*/
+			/*-------FREEZING PAGE -------*/
+			
+		
+/* console.log('--cartoon dudes--');
+	var cartoonDudes = [
+	'Superman',
+	'Batman',
+	'Wolverine',
+	'Iceman',
+	];
+	
+	for(var i=0; j=cartoonDudes.length; i<j,i++) {
+		console.log(cartoonDudes[i]);
+	} */
+	
+	/*-------FREEZING PAGE -------*/
+		/*-------FREEZING PAGE -------*/
+			/*-------FREEZING PAGE -------*/
 
 
 /*******************************************
