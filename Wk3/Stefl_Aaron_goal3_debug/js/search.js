@@ -19,7 +19,7 @@ PWA1 */
 		searchInput = document.forms[0].search,
 		currentSearch = ''
 	;
-console.log('---Line 15 ---');
+console.log('---Line 22 ---');
 	// Validates search query
 	var validate = function(query){
 
@@ -33,7 +33,7 @@ console.log('---Line 15 ---');
         };
     
 	
-console.log('--- LINE 29  ---');
+console.log('--- LINE 36  ---');
 		//Check search length, must have 3 characters
 		if(query.length < 3){
 			alert("Your search query is too small, try again");	//Changed the . to "
@@ -44,7 +44,7 @@ console.log('--- LINE 29  ---');
         };
 		search(query);
 	};
-console.log('--- LINE 40 ---');
+console.log('--- LINE 47 ---');
 	// Finds search matches
 	var search = function(query) {	/*---Took out (query); and added {---*/   //added (query) back in
 
@@ -63,7 +63,7 @@ console.log('--- LINE 40 ---');
             var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);	//Changed camelCase for toLowercase, dbTitleEnd
 
 			
-console.log('--- LINE 59 ---');
+console.log('--- LINE 66 ---');
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
             for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {
@@ -81,7 +81,7 @@ console.log('--- LINE 59 ---');
 		results.sort();
 
 		
-console.log('--- LINE 77 ---');
+console.log('--- LINE 84 ---');
 		// Check that matches were found, and run output functions
 		if(results.length === 0){ 	//Replaced < with ===
 			noMatch();
@@ -99,7 +99,7 @@ console.log('--- LINE 77 ---');
 		resultsDIV.innerHTML = html;
 	};
 
-	console.log('--- LINE 95 ---');
+	console.log('--- LINE 102 ---');
 	// Put matches into page as paragraphs with anchors
 	var showMatches = function(results){
 
@@ -125,7 +125,7 @@ console.log('--- LINE 77 ---');
 		};
 		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.
 	};
-console.log('--- LINE 121 ---');
+console.log('--- LINE 128 ---');
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
 	document.forms[0].onsubmit = function() {
